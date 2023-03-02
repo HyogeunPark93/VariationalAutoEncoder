@@ -4,7 +4,8 @@ import numpy as np
 class DatasetManager():
         
     def reshape_dataset(dataset):
-        return dataset.reshape((dataset.shape[0], 28, 28, 1))/ 255.
+        '''reshape dataset'''
+        return dataset.reshape((dataset.shape[0],dataset.shape[1],dataset.shape[2], 1))/ 255.
     
     def binarize_dataset(dataset):
         return np.where(dataset > .5, 1.0, 0.0).astype('float32')
